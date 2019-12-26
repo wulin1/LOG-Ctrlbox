@@ -1,13 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>首页</title>
+    <meta charset="utf-8"/>
+    <title>首页表单</title>
+    <link rel=stylesheet type=text/css href="css/lrtk.css">
+    <script type=text/javascript src="js/jquery.min.js"></script>
 </head>
 <body>
+<div class="menu_bt">
+   <a>LOG仓储系统</a>
+    <a class="menu_tc" href="login.html">退出登录</a>
 
-<div>
-    <h1>欢迎你</h1>
+</div>
+<div id="firstpane" class="menu_list">
+    <p class="menu_head current">系统设置</p>
+    <div style="display:block" class=menu_body>
+        <a href="#">用户管理</a>
+        <a href="#">角色管理</a>
+        <a href="#">资源管理</a>
+        <a href="#">标识符管理</a>
+    </div>
+    <p class="menu_head">基本资料</p>
+    <div style="display:none" class=menu_body>
+        <a href="#">仓库管理</a>
+        <a href="#">库位管理</a>
+        <a href="#">货主管理</a>
+        <a href="#">客户管理</a>
+        <a href="#">计量单位</a>
+        <a href="#">产品类别</a>
+        <a href="#">产品管理</a>
+        <a href="#">承认商管理</a>
+
+    </div>
+    <p class="menu_head">仓库作业</p>
+    <div style="display:none" class=menu_body>
+        <a href="#">入库管理</a>
+        <a href="#">出库管理</a>
+        <a href="#">报损管理</a>
+        <a href="#">移库管理</a>
+    </div>
+    <p class="menu_head">财务管理</p>
+    <div style="display:none" class=menu_body>
+        <a href="#">财务类别</a>
+        <a href="#">应收管理</a>
+        <a href="#">应付管理</a>
+        <a href="#">财务记账</a>
+    </div>
+    <p class="menu_head">表报管理</p>
+    <div style="display:none" class=menu_body>
+        <a href="#">库存清单</a>
+        <a href="#">可出库存</a>
+        <a href="#">库存台账</a>
+        <a href="#">库存容量</a>
+    </div>
+</div>
+<script type=text/javascript>
+    $(document).ready(function () {
+        $("#firstpane .menu_body:eq(0)").show();
+        $("#firstpane p.menu_head").click(function () {
+            $(this).addClass("current").next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
+            $(this).siblings().removeClass("current");
+        });
+        $("#secondpane .menu_body:eq(0)").show();
+        $("#secondpane p.menu_head").mouseover(function () {
+            $(this).addClass("current").next("div.menu_body").slideDown(500).siblings("div.menu_body").slideUp("slow");
+            $(this).siblings().removeClass("current");
+        });
+    });
+</script>
 </div>
 </body>
 </html>
